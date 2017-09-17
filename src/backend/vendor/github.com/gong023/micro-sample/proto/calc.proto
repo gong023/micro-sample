@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service Calc {
+    rpc Increment(NumRequest) returns (NumResponse) {}
+}
+
+message NumRequest {
+    int64 val = 1;
+}
+
+message NumResponse {
+    int64 val = 2;
+}
