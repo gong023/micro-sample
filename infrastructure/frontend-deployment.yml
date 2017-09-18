@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: micro-sample-frontend-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: micro-sample
+        tier: frontend
+        track: stable
+    spec:
+      containers:
+      - name: micro-sample-frontend
+        image: gcr.io/kube-hubot/micro-sample-frontend:v0.1
+        ports:
+          - containerPort: 8080
+            name: http
