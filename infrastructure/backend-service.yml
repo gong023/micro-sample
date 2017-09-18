@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: micro-sample-service-backend
+spec:
+  selector:
+    app: micro-sample
+    tier: backend
+  ports:
+  - protocol: TCP
+    port: 8000
+    targetPort: 8000

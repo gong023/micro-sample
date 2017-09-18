@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: micro-sample-backend-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: micro-sample
+        tier: backend
+        track: stable
+    spec:
+      containers:
+      - name: micro-sample
+        image: gcr.io/kube-hubot/micro-sample-backend:v0.1
+        ports:
+        - containerPort: 8000
+
